@@ -110,9 +110,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ---
 
-Replace `'YOUR_AUTH_TOKEN'` with your actual PayHero API key when using the SDK. Also, ensure to update the License section with the appropriate license information for your project.
-
-Feel free to add more detailed instructions, examples, or explanations to the README as needed. Additionally, you may want to provide information on how users can contribute to the project, if applicable.
-=======
-# payhero-wrapper
 >>>>>>> 1a02e7b7e71d0e86364e3a6705dae4ca05e588c3
