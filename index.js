@@ -5,6 +5,7 @@ class Payhero{
         this.Authorization = Authorization;
         this.baseUrl = 'https://backend.payhero.co.ke/api/v2/'
     }
+    
 async makeStkPush(details){
     try{
         const response = await axios.post(`${this.baseUrl}payments `, details, {
@@ -14,11 +15,24 @@ async makeStkPush(details){
         });
         return response.data;   
     }catch(err){
-        consoel.log(err);
+        console.log(err);
         throw err;
     }
                 
 };
+async sasaPayment(details){
+    try{
+        const response = await axios.post(`${this.baseUrl}payments`, details, {
+            headers: {
+                Authorization: this.Authorization
+            }
+        });
+        return response.data;   
+    }catch(err){
+        console.log(err);
+        throw err;
+    }
+}
 //get service wallet balance
 async serviceWalletBalance(){
     try{

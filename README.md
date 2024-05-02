@@ -52,6 +52,21 @@ payHero.serviceWalletBalance()
     .then(response => console.log(response))
     .catch(error => console.error(error));
 ```
+### Initiating sasapay stk push
+
+```javascript
+const sasapayments={ 
+    "amount": 10,
+    "phone_number": "0740161331",
+    "provider": "sasapay", 
+    "network_code":"63902",
+    "external_reference": "INV-99992",
+    "callback_url": "https://example.com/callback.php"
+
+}
+ payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
+
+```
 
 ### Retrieving Payments Wallet Balance
 
