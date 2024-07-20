@@ -4,7 +4,7 @@
 
 # Unofficial PayHero Node.js SDK
 
-Welcome to the unofficial PayHero Node.js SDK, developed by Wahome Mutahi. This SDK provides a convenient way to integrate PayHero payment functionality into your Node.js applications.
+Welcome to the unofficial PayHero Node.js SDK, this SDK provides a convenient way to integrate PayHero payment functionality into your Node.js applications.
 
 ## Installation
 
