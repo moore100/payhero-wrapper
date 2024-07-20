@@ -44,19 +44,18 @@ const topUpDetails={
 //list payment channels
 //payHero.paymentChannels().then(response=>console.log(response)).catch(err=>console.log(err))
 //create payment channel
-const channelDetails={
+// const channelDetails={
     
-        "channel_type": "bank", //short_code
-        "short_code": "247247",
-        "account_number": "Bank Account Number",
-        "description": "Equity Bank"
+//         "channel_type": "bank", //short_code
+//         "short_code": "247247",
+//         "account_number": "Bank Account Number",
+//         "description": "Equity Bank"
       
       
 
 
-
-}
-payHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
+// }
+//payHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
 
 
 // payHero.accountTransactions().then(response=>{
