@@ -3,8 +3,8 @@ import PayHero from './index.js'
 
 
 
-const apiUsername = 'haHybLB7nmx3OPPuhtTF';
-const apiPassword = 'PCaxDsP8FPWFAM3zmIDqs096DVXeYVc1CIotZFBk';
+const apiUsername = '';
+const apiPassword = '';
 
 // Concatenating username and password with colon
 const credentials = `${apiUsername}:${apiPassword}`;
