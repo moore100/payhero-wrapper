@@ -45,6 +45,31 @@ payHero.makeStkPush(paymentDetails)
     .catch(error => console.error(error));
 ```
 
+### Retrieving payment channels
+
+```javascript
+payHero.paymentChannels()
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+```
+### Retrieving Service Wallet Balance
+
+### Creating payment channels
+
+```javascript
+const channelDetails={
+    
+        "channel_type": "bank", //short_code
+        "short_code": "247247",
+        "account_number": "Bank Account Number",
+        "description": "Equity Bank"
+      
+}
+
+payHero.createPaymentChannel(channelDetails)
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+```
 ### Retrieving Service Wallet Balance
 
 ```javascript
@@ -52,6 +77,10 @@ payHero.serviceWalletBalance()
     .then(response => console.log(response))
     .catch(error => console.error(error));
 ```
+
+
+
+
 ### Initiating sasapay stk push
 
 ```javascript
