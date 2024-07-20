@@ -1,9 +1,10 @@
+import Payhero from './index.js';
 import PayHero from './index.js'
 
 
 
-const apiUsername = 'z7VoCJ66CJF97hqrHt5P';
-const apiPassword = 'MOXOaMuthM7jhNLmkpuzzqbjHLtMkyJAEvG6RfJx';
+const apiUsername = 'haHybLB7nmx3OPPuhtTF';
+const apiPassword = 'PCaxDsP8FPWFAM3zmIDqs096DVXeYVc1CIotZFBk';
 
 // Concatenating username and password with colon
 const credentials = `${apiUsername}:${apiPassword}`;
@@ -17,6 +18,8 @@ const basicAuthToken = `Basic ${encodedCredentials}`;
 //Output the token
  console.log(basicAuthToken);
  const payHero=new PayHero(basicAuthToken)
+//Output the token
+
 const paymentDetails={
     "amount": 10,
     "phone_number": "0740161331",
@@ -38,14 +41,35 @@ const topUpDetails={
     amount: 10,
     phone_number: "0740161331"
 }
+//list payment channels
+//payHero.paymentChannels().then(response=>console.log(response)).catch(err=>console.log(err))
+//create payment channel
+const channelDetails={
+    
+        "channel_type": "bank", //short_code
+        "short_code": "247247",
+        "account_number": "Bank Account Number",
+        "description": "Equity Bank"
+      
+      
+
+
+
+}
+payHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
+
+
+// payHero.accountTransactions().then(response=>{
+//     console.log(response)}).catch(err=>console.log(err))
+
 
 //payhero sasapay
- payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
+ //payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
 
 // payHero.makeStkPush(paymentDetails)
 // .then(response=>console.log(response))
 // .catch(err=>console.log(err))
-
+//list payment channels
 
 // payHero.paymentsWalletBalance().then(response=>console.log(response)).catch(err=>console.log(err))
 // .catch(err=>console.log(err))

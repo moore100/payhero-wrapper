@@ -103,6 +103,34 @@ async transactionStatus(transactionId){
         throw err;
     }
 };
+//get payment channels
+async paymentChannels(){
+    try{
+        const response = await axios.get(`${this.baseUrl}payment_channels`, {
+            headers: {
+                Authorization: this.Authorization
+            }
+        });
+        return response.data;   
+    }catch(err){
+        console.log(err);
+        throw err;
+    }
+};
+//create a payment channel
+async createPaymentChannel(details){
+    try{
+        const response = await axios.post(`${this.baseUrl}payment_channels`, details, {
+            headers: {
+                Authorization: this.Authorization
+            }
+        });
+        return response.data;   
+    }catch(err){
+        console.log(err);
+        throw err;
+    }
+};
 
 }
 export default Payhero;
