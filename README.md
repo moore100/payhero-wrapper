@@ -52,7 +52,7 @@ payHero.paymentChannels()
     .then(response => console.log(response))
     .catch(error => console.error(error));
 ```
-### Retrieving Service Wallet Balance
+
 
 ### Creating payment channels
 
