@@ -70,6 +70,17 @@ payHero.createPaymentChannel(channelDetails)
     .then(response => console.log(response))
     .catch(error => console.error(error));
 ```
+
+### Retrieving supported banks
+
+```javascript
+payHero.getBanks()
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+```
+
+
+
 ### Retrieving Service Wallet Balance
 
 ```javascript

@@ -3,8 +3,8 @@ import PayHero from './index.js'
 
 
 
-const apiUsername = '';
-const apiPassword = '';
+const apiUsername ="" ;
+const apiPassword = "";
 
 // Concatenating username and password with colon
 const credentials = `${apiUsername}:${apiPassword}`;
@@ -54,8 +54,10 @@ const topUpDetails={
       
 
 
-// }
+// // }
 //payHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
+payHero.getBanks().then(response=>{
+    console.log(response)}).catch(err=>console.log(err))
 
 
 // payHero.accountTransactions().then(response=>{

@@ -132,5 +132,20 @@ async createPaymentChannel(details){
     }
 };
 
+//get banks
+async getBanks(){
+    try{
+        const response = await axios.get(`${this.baseUrl}bank_paybills`, {
+            headers: {
+                Authorization: this.Authorization
+            }
+        });
+        return response.data;   
+    }catch(err){
+        console.log(err);
+        throw err;
+    }
+}
+
 }
 export default Payhero;
