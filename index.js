@@ -147,5 +147,22 @@ async getBanks(){
     }
 }
 
+//whatsapp payments
+async makeWhatsappPayment(details){
+    try{
+        const response = await axios.post(`${this.baseUrl}whatspp/sendText`, details, {
+            headers: {
+                Authorization: this.Authorization
+            }
+        });
+        return response.data;  
+    }
+    catch(err){
+        console.log(err);
+        throw err;
+    }
+}
+
+
 }
 export default Payhero;

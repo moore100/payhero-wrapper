@@ -3,8 +3,8 @@ import PayHero from './index.js'
 
 
 
-const apiUsername ="" ;
-const apiPassword = "";
+const apiUsername ="haHybLB7nmx3OPPuhtTF" ;
+const apiPassword = "PCaxDsP8FPWFAM3zmIDqs096DVXeYVc1CIotZFBk";
 
 // Concatenating username and password with colon
 const credentials = `${apiUsername}:${apiPassword}`;
@@ -41,6 +41,16 @@ const topUpDetails={
     amount: 10,
     phone_number: "0740161331"
 }
+
+const whatsappDetails = {
+    "message": "My First Text",
+    "phone_number": "0740161331",
+    "session": "haHybLB7nmx3OPPuhtTF"
+}
+payHero.makeWhatsappPayment(whatsappDetails).then(response=>{
+        console.log(response)}).catch(err=>console.log(err))
+
+
 //list payment channels
 //payHero.paymentChannels().then(response=>console.log(response)).catch(err=>console.log(err))
 //create payment channel
@@ -56,8 +66,9 @@ const topUpDetails={
 
 // // }
 //payHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
-payHero.getBanks().then(response=>{
-    console.log(response)}).catch(err=>console.log(err))
+// payHero.getBanks().then(response=>{
+//     console.log(response)}).catch(err=>console.log(err))
+
 
 
 // payHero.accountTransactions().then(response=>{
