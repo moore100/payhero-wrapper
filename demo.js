@@ -3,8 +3,8 @@ import PayHero from './index.js'
 
 
 
-const apiUsername ="haHybLB7nmx3OPPuhtTF" ;
-const apiPassword = "PCaxDsP8FPWFAM3zmIDqs096DVXeYVc1CIotZFBk";
+const apiUsername ="" ;
+const apiPassword = "";
 
 // Concatenating username and password with colon
 const credentials = `${apiUsername}:${apiPassword}`;
@@ -30,7 +30,7 @@ const paymentDetails={
 }
 const sasapayments={ 
     "amount": 10,
-    "phone_number": "0740161331",
+    "phone_number": "0759408403",
     "provider": "sasapay", 
     "network_code":"63902",
     "external_reference": "INV-99992",
@@ -42,13 +42,13 @@ const topUpDetails={
     phone_number: "0740161331"
 }
 
-const whatsappDetails = {
-    "message": "My First Text",
-    "phone_number": "0740161331",
-    "session": "haHybLB7nmx3OPPuhtTF"
-}
-payHero.makeWhatsappPayment(whatsappDetails).then(response=>{
-        console.log(response)}).catch(err=>console.log(err))
+// const whatsappDetails = {
+//     "message": "My First Text",
+//     "phone_number": "0740161331",
+//     "session": "haHybLB7nmx3OPPuhtTF"
+// }
+// payHero.makeWhatsappPayment(whatsappDetails).then(response=>{
+//         console.log(response)}).catch(err=>console.log(err))
 
 
 //list payment channels
@@ -76,7 +76,7 @@ payHero.makeWhatsappPayment(whatsappDetails).then(response=>{
 
 
 //payhero sasapay
- //payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
+ payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
 
 // payHero.makeStkPush(paymentDetails)
 // .then(response=>console.log(response))
