@@ -37,6 +37,16 @@ const sasapayments={
     "callback_url": "https://example.com/callback.php"
 
 }
+
+const withdrawal={ 
+    "amount": 10,
+    "phone_number": "0759408403",
+    "channel": "mpesa101",
+    "network_code":"63902",
+    "external_reference": "INV-99992",
+    "callback_url": "https://example.com/callback.php"
+
+}
 const topUpDetails={
     amount: 10,
     phone_number: "0740161331"
@@ -69,6 +79,8 @@ const topUpDetails={
 // payHero.getBanks().then(response=>{
 //     console.log(response)}).catch(err=>console.log(err))
 
+//withdraw
+payHero.withdraw(withdrawal).then(response=>console.log(response));
 
 
 // payHero.accountTransactions().then(response=>{
@@ -76,7 +88,7 @@ const topUpDetails={
 
 
 //payhero sasapay
- payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
+ //payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
 
 // payHero.makeStkPush(paymentDetails)
 // .then(response=>console.log(response))

@@ -146,10 +146,28 @@ payHero.transactionStatus(transactionId)
     .then(response => console.log(response))
     .catch(error => console.error(error));
 ```
-### Sending whastapp messages
+
+### Withdrawing funds
+ 
+```javascript
+const withdrawal={ 
+    "amount": 10,
+    "phone_number": "0759408403",
+    "channel": "mpesa101",
+    "network_code":"63902",
+    "external_reference": "INV-99992",
+    "callback_url": "https://example.com/callback.php"
+
+}
+payHero.withdraw(withdrawal).then(response=>{
+        console.log(response)}).catch(err=>console.log(err))
+
+
+```
+### Sending whatsapp messages
  For more details on getting started, visit the [official documentation](https://pay-hero-kenya-1.gitbook.io/pay-hero-developer-apis/whatsapp-api/send-whats-app-text).
 ```javascript
-cconst whatsappDetails = {
+const whatsappDetails = {
     "message": "My First Text",
     "phone_number": "0740161331",
     "session": "your api username here"
