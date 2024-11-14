@@ -1,7 +1,5 @@
-import Payhero from './index.js';
+
 import PayHero from './index.js'
-
-
 
 const apiUsername ="" ;
 const apiPassword = "";
@@ -15,12 +13,24 @@ const encodedCredentials = Buffer.from(credentials).toString('base64');
 // Creating the Basic Auth token
 const basicAuthToken = `Basic ${encodedCredentials}`;
 
+
+const PayHeroConfig = {
+    Authorization: basicAuthToken,
+    pesapalConsumerKey: 'b0kAVh6/jC/pbsUjMdMTbQ41NH/Ll+qB',
+    pesapalConsumerSecret: 'K/5uLLEI5mSEYnmmyDBnwJomU40=',
+    pesapalApiUrl: 'https://pay.pesapal.com/v3', // Sandbox or production URL
+    pesapalCallbackUrl: 'https://your-application.com/pesapal-callback',
+    pesapalIpnId: '732ae5c9-7c71-458c-83ae-dc94d4e6a721'
+  };
+  
+
+
 //Output the token
  console.log(basicAuthToken);
- const payHero=new PayHero(basicAuthToken)
+ const PayHero=new PayHero(PayHeroConfig)
 //Output the token
 
-const paymentDetails={
+const paymentetails={
     "amount": 10,
     "phone_number": "0740161331",
     "channel_id": 333, 
@@ -28,15 +38,7 @@ const paymentDetails={
     "external_reference": "INV-009",
     "callback_url": "https://example.com/callback.php"
 }
-const sasapayments={ 
-    "amount": 10,
-    "phone_number": "0759408403",
-    "provider": "sasapay", 
-    "network_code":"63902",
-    "external_reference": "INV-99992",
-    "callback_url": "https://example.com/callback.php"
 
-}
 
 const withdrawal={ 
     "amount": 10,
@@ -51,18 +53,27 @@ const topUpDetails={
     amount: 10,
     phone_number: "0740161331"
 }
-
+const paymentDetails = {
+    currency: 'KES',
+    amount: 1000,
+    description: 'Test payment',
+    customerEmail: 'wahomemutahi8@gmail.com',
+    customerFirstName: 'John',
+    customerLastName: 'Doe',
+    phoneNumber: '0740161331',
+    countryCode: 'KE'
+  };
 // const whatsappDetails = {
 //     "message": "My First Text",
 //     "phone_number": "0740161331",
 //     "session": "haHybLB7nmx3OPPuhtTF"
 // }
-// payHero.makeWhatsappPayment(whatsappDetails).then(response=>{
+// PayHero.makeWhatsappPayment(whatsappDetails).then(response=>{
 //         console.log(response)}).catch(err=>console.log(err))
 
 
 //list payment channels
-//payHero.paymentChannels().then(response=>console.log(response)).catch(err=>console.log(err))
+//PayHero.paymentChannels().then(response=>console.log(response)).catch(err=>console.log(err))
 //create payment channel
 // const channelDetails={
     
@@ -75,38 +86,63 @@ const topUpDetails={
 
 
 // // }
-//payHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
-// payHero.getBanks().then(response=>{
+//PayHero.createPaymentChannel(channelDetails).then(response=>console.log(response)).catch(err=>console.log(err))
+// PayHero.getBanks().then(response=>{
 //     console.log(response)}).catch(err=>console.log(err))
 
 //withdraw
-payHero.withdraw(withdrawal).then(response=>console.log(response));
+//PayHero.withdraw(withdrawal).then(response=>console.log(response));
+// async function initiatePesapalPayment() {
+//     try {
+//         const paymentDetails = {
+//             currency: 'KES',
+//             amount: 1000,
+//             description: 'Test payment',
+//             customerEmail: 'customer@example.com',
+//             customerFirstName: 'John',
+//             customerLastName: 'Doe',
+//             phoneNumber: '0712345678',
+//             countryCode: 'KE'
+//           };
+      
+//           const { orderTrackingId, merchantReference, redirectUrl } = await PayHero.initiatePesapalPayment(paymentDetails);
+//           console.log('Pesapal payment initiated:');
+//           console.log('Order Tracking ID:', orderTrackingId);
+//           console.log('Merchant Reference:', merchantReference);
+//           console.log('Redirect URL:', redirectUrl);
+      
+         
+//     } catch (error) {
+//       console.error('Error initiating Pesapal payment:', error.message);
+//     }
+//   }
+  
+  //initiatePesapalPayment();
+
+PayHero.accountTransactions().then(response=>{
+    console.log(response)}).catch(err=>console.log(err))
 
 
-// payHero.accountTransactions().then(response=>{
-//     console.log(response)}).catch(err=>console.log(err))
+//PayHero sasapay
+ //PayHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
 
-
-//payhero sasapay
- //payHero.sasaPayment(sasapayments).then(response=>console.log(response)).catch(err=>console.log(err.message))
-
-// payHero.makeStkPush(paymentDetails)
+// PayHero.makeStkPush(paymentDetails)
 // .then(response=>console.log(response))
 // .catch(err=>console.log(err))
 //list payment channels
 
-// payHero.paymentsWalletBalance().then(response=>console.log(response)).catch(err=>console.log(err))
+// PayHero.paymentsWalletBalance().then(response=>console.log(response)).catch(err=>console.log(err))
 // .catch(err=>console.log(err))
 
 
-// payHero.serviceWalletBalance().then(response=>console.log(response)).catch(err=>console.log(err))
+// PayHero.serviceWalletBalance().then(response=>console.log(response)).catch(err=>console.log(err))
 // .catch(err=>console.log(err))
 
-// payHero.topUpServiceWallet(topUpDetails).then(response=>console.log(response)).catch(err=>console.log(err))
+// PayHero.topUpServiceWallet(topUpDetails).then(response=>console.log(response)).catch(err=>console.log(err))
 // .catch(err=>console.log(err))
 
-// payHero.accountTransactions(topUpDetails).then(response=>console.log(response)).catch(err=>console.log(err))
+// PayHero.accountTransactions(topUpDetails).then(response=>console.log(response)).catch(err=>console.log(err))
 // .catch(err=>console.log(err))
 
-// payHero.transactionStatus('ae3bbe21-6e7c-4ec4-a76c-b3f340ec0990').then(response=>console.log(response)).catch(err=>console.log(err))
+// PayHero.transactionStatus('ae3bbe21-6e7c-4ec4-a76c-b3f340ec0990').then(response=>console.log(response)).catch(err=>console.log(err))
 // .catch(err=>console.log(err))
