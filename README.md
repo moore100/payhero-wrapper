@@ -17,7 +17,7 @@ npm i PayHero-wrapper
 First, import the PayHero class:
 
 ```javascript
-import PayHero from 'PayHero-wrapper';
+import PayHero from 'payhero-wrapper';
 ```
 
 Then, initialize PayHero with your API keys:
