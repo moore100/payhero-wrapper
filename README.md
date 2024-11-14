@@ -9,7 +9,7 @@ Welcome to the unofficial PayHero Node.js SDK, this SDK provides a convenient wa
 You can install the PayHero Node.js SDK via npm:
 
 ```bash
-npm i PayHero-wrapper
+npm i payhero-wrapper
 ```
 
 ## Usage
