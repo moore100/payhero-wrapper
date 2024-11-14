@@ -16,11 +16,11 @@ const basicAuthToken = `Basic ${encodedCredentials}`;
 
 const PayHeroConfig = {
     Authorization: basicAuthToken,
-    pesapalConsumerKey: 'b0kAVh6/jC/pbsUjMdMTbQ41NH/Ll+qB',
-    pesapalConsumerSecret: 'K/5uLLEI5mSEYnmmyDBnwJomU40=',
+    pesapalConsumerKey: '',
+    pesapalConsumerSecret: '',
     pesapalApiUrl: 'https://pay.pesapal.com/v3', // Sandbox or production URL
     pesapalCallbackUrl: 'https://your-application.com/pesapal-callback',
-    pesapalIpnId: '732ae5c9-7c71-458c-83ae-dc94d4e6a721'
+    pesapalIpnId: ''
   };
   
 
